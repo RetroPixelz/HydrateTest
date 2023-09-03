@@ -10,37 +10,16 @@ import FirebaseCore
 import FirebaseAuth
 
 struct ManView: View {
-//    @EnvironmentObject var userViewModel: UserViewModel
+    @AppStorage("isOnboardingFinished") var isOnboardingFinished: Bool = false
+    
+    @EnvironmentObject var userVM: UserViewModel
     
     @ObservedObject var manager: HealthKit = HealthKit()
     
     @State private var action: Int? = 0
     @State private var WelcomeText = false
     
-    //    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
-    @State var isNotAuthenticated = true
-    
-    @State var authHandler: NSObjectProtocol? = nil
-    
-    @State var GoToDetailView = false
-    
-    func GoDetail() {
-        GoToDetailView = true
-    }
-    
-    //    private func fetchCurrentUser() {
-    //        guard let uid = userViewModel.shared.auth.currentUser?.uid else {
-    //            return }
-    //
-    //        userViewModel.shared.firstore.collection
-    //    }
-    
     var body: some View {
-        
-        
-        
-        
         ZStack(alignment: .top) {
             CustomColor.Background
                 .ignoresSafeArea()
@@ -48,12 +27,9 @@ struct ManView: View {
             VStack{
                 HStack {
                     VStack{
-                        
                         Text("Welcome back!")
                             .font(.system(size: 20))
                             .padding(10)
-                        
-                        
                         
                         Text("Remember to let us know that you drank some water, while your at it take a look at your steps and calories burnt")
                             .font(.system(size: 10))
@@ -61,13 +37,8 @@ struct ManView: View {
                             .padding(10)
                     }
                     
-                    
-                    
                     Image("Yoga")
                         .resizable()
-                    
-                    //                        .offset(x: 60)
-                    //                        .zIndex(1)
                 }
                 .frame(width: 335, height: 250)
                 .background(CustomColor.Secondary)
@@ -80,19 +51,15 @@ struct ManView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        GoDetail()
-                        
-                    }) {
+                    NavigationLink {
+                        TodaysDetailsView()
+                    } label: {
                         Text("See all")
                             .fontWeight(.bold)
                     }
+                    
                 }
                 .padding()
-                
-                NavigationLink(destination: TodaysDetailsView(), isActive: $GoToDetailView) {
-                    EmptyView()
-                }
                 
                 HStack{
                     VStack{
@@ -141,35 +108,18 @@ struct ManView: View {
                     
                 }
                 .padding()
-                
             }
         }
         .navigationTitle("Activity")
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing){
                 Image(systemName: "gear")
                     .font(.headline)
-                
-                
-                
-                
-                
-                
-                
             }
+        }
+        .onAppear {
+            userVM.getUserDetails()
         }
     }
 }
-    
-    
-    
-    struct ManView_Previews: PreviewProvider {
-        static var previews: some View {
-            NavigationStack{
-                ManView()
-            }
-            
-               
-        }
-    }
-

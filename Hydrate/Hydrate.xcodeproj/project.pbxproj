@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923858242AA4B3CA00F62921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923858232AA4B3CA00F62921 /* GoogleService-Info.plist */; };
 		D00F45DE2A95027E006E99C4 /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F45DD2A95027E006E99C4 /* StepsViewModel.swift */; };
 		D03EE3A82A962B1600B25257 /* StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EE3A72A962B1600B25257 /* StepsModel.swift */; };
 		D03EE3AA2A962B5200B25257 /* CarloriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EE3A92A962B5200B25257 /* CarloriesModel.swift */; };
@@ -26,7 +27,6 @@
 		D08C18B42A84E734004242A7 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C18B32A84E733004242A7 /* AuthenticationView.swift */; };
 		D09B23C22A8D10610034ED51 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B23C12A8D10610034ED51 /* HealthKit.swift */; };
 		D0F017DD2A8D5E7F00982AC6 /* HealthActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F017DC2A8D5E7F00982AC6 /* HealthActivity.swift */; };
-		D0F017DF2A8E211800982AC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F017DE2A8E211700982AC6 /* GoogleService-Info.plist */; };
 		D0F017E22A8E22B800982AC6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0F017E12A8E22B800982AC6 /* FirebaseAuth */; };
 		D0F017E42A8E22B800982AC6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D0F017E32A8E22B800982AC6 /* FirebaseFirestore */; };
 		D0F017E62A8E22B800982AC6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0F017E52A8E22B800982AC6 /* FirebaseFirestoreSwift */; };
@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923858232AA4B3CA00F62921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D00F45DD2A95027E006E99C4 /* StepsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
 		D03EE3A72A962B1600B25257 /* StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsModel.swift; sourceTree = "<group>"; };
 		D03EE3A92A962B5200B25257 /* CarloriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarloriesModel.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		D09B23C12A8D10610034ED51 /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		D09B23C32A8D10AE0034ED51 /* Hydrate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hydrate.entitlements; sourceTree = "<group>"; };
 		D0F017DC2A8D5E7F00982AC6 /* HealthActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthActivity.swift; sourceTree = "<group>"; };
-		D0F017DE2A8E211700982AC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0F017E82A8E521200982AC6 /* BioAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthView.swift; sourceTree = "<group>"; };
 		D0F017EA2A8E537500982AC6 /* BioAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthManager.swift; sourceTree = "<group>"; };
 		D0F5186A2AA3E233008E5D14 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		D07E93B62A7B0C8B00102BF6 /* Hydrate */ = {
 			isa = PBXGroup;
 			children = (
-				D0F017DE2A8E211700982AC6 /* GoogleService-Info.plist */,
+				923858232AA4B3CA00F62921 /* GoogleService-Info.plist */,
 				D09B23C32A8D10AE0034ED51 /* Hydrate.entitlements */,
 				D0F518722AA48B0D008E5D14 /* Models */,
 				D09B23C02A8D0FDE0034ED51 /* HealthKit */,
@@ -249,8 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07E93BF2A7B0C9100102BF6 /* Preview Assets.xcassets in Resources */,
+				923858242AA4B3CA00F62921 /* GoogleService-Info.plist in Resources */,
 				D07E93BC2A7B0C9100102BF6 /* Assets.xcassets in Resources */,
-				D0F017DF2A8E211800982AC6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

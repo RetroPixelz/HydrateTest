@@ -9,40 +9,31 @@ import FirebaseFirestore
 @main
 struct HydrateApp: App {
     @ObservedObject var manager: HealthKit = HealthKit()
-    @StateObject var userVM = UserViewModel() // Create an instance of UserDataManager
-
-
+    
+    // User ViewModel
+    @StateObject var userVM = UserViewModel()
+    
     @State var isNotAuthenticated = true
-
+    
     @State var authHandler: NSObjectProtocol? = nil
-
+    
     @StateObject var VM = ViewModel()
-
-
+    
+    
     init() {
         FirebaseApp.configure()
         print("hey the app was intialised")
     }
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(userVM)
-                .onAppear {
-                    
-                    VM.updateFirebaseDocument()
-                        
-                }
-
+            NavigationStack {
+                ContentView()
+                    .onAppear {
+                        VM.updateFirebaseDocument()
+                    }
+            }
+            .environmentObject(userVM)
         }
     }
-
-
-
 }
-
-
-
-
-// if statement wat check of daar n collection is met dieselfde datum, as nie doen n ane if wat n nuwe entry maak
-
