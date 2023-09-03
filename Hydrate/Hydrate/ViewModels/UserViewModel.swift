@@ -34,7 +34,16 @@ class UserViewModel: ObservableObject {
     }
     
     func getUserId() -> String {
+        print(" user id that will be used \(Auth.auth().currentUser?.uid ?? "")")
         return Auth.auth().currentUser?.uid ?? "No user id found"
+    }
+    
+    func signOut() async {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
     func hasUserLoggedInPrev() -> Bool {

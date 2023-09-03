@@ -109,6 +109,16 @@ struct ManView: View {
                 }
                 .padding()
             }
+            
+            Button(action: {
+                Task {
+                    await userVM.signOut()
+                }
+                
+            }) {
+                Text("Sign out")
+                    .foregroundColor(.black)
+            }
         }
         .navigationTitle("Activity")
         .navigationBarBackButtonHidden(true)
