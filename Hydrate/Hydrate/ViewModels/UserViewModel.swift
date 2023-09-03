@@ -13,6 +13,7 @@ class UserViewModel: ObservableObject {
     private let db = Firestore.firestore()
     
     @Published var userLoggedIn: Bool = false
+    @Published var userData: User?
     
     func getUserDetails() {
         let userId = getUserId()
@@ -21,9 +22,10 @@ class UserViewModel: ObservableObject {
             guard let self = self else { return }
             
             if let document = document, document.exists {
-                if let userData = try? document.data(as: User.self) {
+                if let data = try? document.data(as: User.self) {
                     print("The user data should have decoded")
-                    print("-----------\(userData)")
+                    print("-----------\(data)")
+                    userData = data
                 } else {
                     print(error?.localizedDescription ?? "Problem with decoding document")
                 }

@@ -74,7 +74,7 @@ struct ManView: View {
                             .fontWeight(.bold)
                             .padding(.bottom)
                         
-                        Text("2000")
+                        Text(String(userVM.userData?.steps ?? 0))
                             .font(.system(size: 15))
                             .fontWeight(.bold)
                     }
